@@ -4,9 +4,8 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// HU-01 (BELLINGHAM-14): Como jugador de Hielo, quiero moverme y saltar, para avanzar por el nivel.
 /// Script de movimiento y salto específico para el personaje de Hielo.
-/// Utiliza el nuevo Input System de Unity (UnityEngine.InputSystem).
 /// 
-/// Controles predeterminados para Hielo (según README / GDD):
+/// Controles predeterminados para Hielo:
 ///   - Izquierda: Tecla A
 ///   - Derecha: Tecla D
 ///   - Saltar: Tecla W
