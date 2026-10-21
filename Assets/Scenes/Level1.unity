@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7bf15b7864a694dbf23ef03052e34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaMeta
-  siguienteEscena: MainMenu
+  siguienteEscena: LevelSelect
 --- !u!1 &1060995951
 GameObject:
   m_ObjectHideFlags: 0

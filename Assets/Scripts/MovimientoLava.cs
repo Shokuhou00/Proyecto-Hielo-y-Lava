@@ -29,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // Evita que el personaje ruede sobre sí mismo al chocar con Hielo, bordes o paredes
+        // (mismo fix que ya tiene MovimientoHielo.cs). Sin esto, un giro desalinea el
+        // groundCheck hijo y el personaje deja de detectar suelo para poder saltar.
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void Update()

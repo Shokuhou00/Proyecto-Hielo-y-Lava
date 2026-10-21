@@ -6,8 +6,11 @@ public class ZonaMeta : MonoBehaviour
     private bool hieloEnMeta = false;
     private bool lavaEnMeta = false;
 
-    [Tooltip("Nombre de la siguiente escena a cargar")]
-    public string siguienteEscena = "MenuPrincipal";
+    [Tooltip("Numero de ESTE nivel (1, 2, 3...). Se usa para desbloquear el siguiente.")]
+    public int numeroNivelActual = 1;
+
+    [Tooltip("Nombre de la siguiente escena a cargar (normalmente el selector de niveles)")]
+    public string siguienteEscena = "LevelSelect";
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,11 +47,11 @@ public class ZonaMeta : MonoBehaviour
     void CompletarNivel()
     {
         Debug.Log("¡Nivel completado por ambos personajes!");
-        
-        // Aquí puedes usar tu clase estática ProgresoJuego para guardar el nivel desbloqueado si lo requieres
-        // ProgresoJuego.DesbloquearHasta(2); 
 
-        // Carga la siguiente escena o recarga la actual
+        // Desbloquea el siguiente nivel usando ProgresoJuego (persistido con PlayerPrefs)
+        ProgresoJuego.DesbloquearHasta(numeroNivelActual + 1);
+
+        // Carga la siguiente escena (normalmente el selector de niveles)
         SceneManager.LoadScene(siguienteEscena);
     }
 }

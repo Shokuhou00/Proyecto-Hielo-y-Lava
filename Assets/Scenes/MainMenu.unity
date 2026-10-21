@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426f86c1b2bf0c7e6aa81cd46605d049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
-  escenaNivel1: SampleScene
+  escenaNivel1: Level1
   escenaSeleccionNivel: LevelSelect
 --- !u!4 &1329346132
 Transform:
