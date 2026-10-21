@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotonNivel
   numeroNivel: 1
-  nombreEscena: SampleScene
+  nombreEscena: Level1
   etiqueta: {fileID: 293017332}
   textoAviso: {fileID: 1263591171}
 --- !u!1 &293017330
