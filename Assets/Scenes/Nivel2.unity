@@ -2698,7 +2698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaMeta
   numeroNivelActual: 2
-  siguienteEscena: LevelSelect
+  siguienteEscena: 3
   menu: {fileID: 0}
 --- !u!1 &854198410
 GameObject:

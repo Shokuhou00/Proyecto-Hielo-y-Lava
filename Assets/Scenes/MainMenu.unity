@@ -1148,6 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
   escenaNivel1: Level1
+  prefijoNivel: Nivel
   escenaSeleccionNivel: LevelSelect
 --- !u!4 &1329346132
 Transform:

@@ -10,7 +10,9 @@ using TMPro;
 ///
 /// Convención: las escenas de nivel se llaman Nivel1, Nivel2, Nivel3...
 /// El número de nivel se toma del nombre de la escena automáticamente.
-/// Usa tu ProgresoJuego existente para saber qué niveles están desbloqueados.
+/// Usa ProgresoJuego para saber qué niveles están desbloqueados.
+///
+/// Se agrega al objeto CanvasMenuNivel (el Canvas, no el panel).
 /// </summary>
 public class MenuNivel : MonoBehaviour
 {
@@ -49,8 +51,8 @@ public class MenuNivel : MonoBehaviour
 
     private void Start()
     {
-       hielo = FindAnyObjectByType<MovimientoHielo>();
-       lava = FindAnyObjectByType<PlayerMovement>();
+        hielo = FindAnyObjectByType<MovimientoHielo>();
+        lava = FindAnyObjectByType<PlayerMovement>();
         Cerrar();
     }
 
