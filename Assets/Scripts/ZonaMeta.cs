@@ -5,12 +5,16 @@ public class ZonaMeta : MonoBehaviour
 {
     private bool hieloEnMeta = false;
     private bool lavaEnMeta = false;
+    private bool completado = false;
 
     [Tooltip("Numero de ESTE nivel (1, 2, 3...). Se usa para desbloquear el siguiente.")]
     public int numeroNivelActual = 1;
 
     [Tooltip("Nombre de la siguiente escena a cargar (normalmente el selector de niveles)")]
     public string siguienteEscena = "LevelSelect";
+
+    [Tooltip("(Opcional) Menu del nivel. Si se asigna, muestra la pantalla de victoria en lugar de cargar siguienteEscena.")]
+    public MenuNivel menu;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,7 +30,7 @@ public class ZonaMeta : MonoBehaviour
         }
 
         // Si ambos llegaron, se considera victoria
-        if (hieloEnMeta && lavaEnMeta)
+        if (hieloEnMeta && lavaEnMeta && !completado)
         {
             CompletarNivel();
         }
@@ -46,12 +50,19 @@ public class ZonaMeta : MonoBehaviour
 
     void CompletarNivel()
     {
+        completado = true;
         Debug.Log("¡Nivel completado por ambos personajes!");
 
         // Desbloquea el siguiente nivel usando ProgresoJuego (persistido con PlayerPrefs)
         ProgresoJuego.DesbloquearHasta(numeroNivelActual + 1);
 
-        // Carga la siguiente escena (normalmente el selector de niveles)
-        SceneManager.LoadScene(siguienteEscena);
+        if (menu != null)
+        {
+            menu.MostrarVictoria();
+        }
+        else
+        {
+            SceneManager.LoadScene(siguienteEscena);
+        }
     }
 }
